@@ -4,6 +4,7 @@ import { Frame } from 'src/components/Frame';
 import { Logo } from 'src/components/Logo';
 import { Button } from 'antd';
 import { useTokenContext } from 'src/TokenProvider';
+import { NavLink } from 'react-router-dom';
 import s from './Header.module.sass';
 
 export type Props = {
@@ -18,7 +19,14 @@ export const Header = memo<Props>(({ className }) => {
     <header className={cn(s.root, className)}>
       <Frame className={s.frame}>
         <Logo />
-        <div />
+        <div>
+          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to=".">
+            home
+          </NavLink>
+          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to="other">
+            other
+          </NavLink>
+        </div>
         <Button onClick={logout} type="primary">
           Выйти
         </Button>
