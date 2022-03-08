@@ -26,6 +26,9 @@ export const Header = memo<Props>(({ className }) => {
           <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to="other">
             other
           </NavLink>
+          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to="cats">
+            cat
+          </NavLink>
         </div>
         <Button onClick={logout} type="primary">
           Выйти
