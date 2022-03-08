@@ -1,4 +1,4 @@
-import React, { createContext, FC, useContext, useMemo, useState } from 'react';
+import React, { createContext, FC, useContext, useEffect, useMemo, useState } from 'react';
 
 export type TokenProviderProps = {
   children: React.ReactChildren | React.ReactChild;
@@ -18,7 +18,12 @@ const TokenContext = createContext<TokenContextType>(null);
 export const useTokenContext = (): TokenContextType => useContext(TokenContext);
 
 export const TokenProvider: FC<TokenProviderProps> = ({ children }) => {
-  const [token, setToken] = useState<string>();
+  const [token, setToken] = useState<string>(localStorage.getItem('token'));
+
+  useEffect(() => {
+    localStorage.setItem('token', token);
+  }, [token]);
+
   const callbacks = useMemo(
     () => ({ login: () => setToken(Math.random().toString(16)), logout: () => setToken(null) }),
     []

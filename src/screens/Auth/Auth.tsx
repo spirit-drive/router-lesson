@@ -3,6 +3,7 @@ import { useTokenContext } from 'src/TokenProvider';
 import { Button } from 'antd';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { NavigationState } from 'src/navigation/types';
+import { Frame } from 'src/components/Frame';
 import s from './Auth.sass';
 
 const Auth: FC = () => {
@@ -16,10 +17,12 @@ const Auth: FC = () => {
   };
   return (
     <div className={s.root}>
-      <div>Авторизация</div>
-      <Button type="primary" onClick={onClick}>
-        Вход
-      </Button>
+      <Frame>
+        <div>Авторизация</div>
+        <Button type="primary" onClick={onClick}>
+          Вход
+        </Button>
+      </Frame>
     </div>
   );
 };

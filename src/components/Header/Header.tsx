@@ -18,6 +18,7 @@ export const Header = memo<Props>(({ className }) => {
     <header className={cn(s.root, className)}>
       <Frame className={s.frame}>
         <Logo />
+        <div />
         <Button onClick={logout} type="primary">
           Выйти
         </Button>
