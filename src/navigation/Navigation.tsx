@@ -19,8 +19,9 @@ const mainElement = (
   </ProtectedRoute>
 );
 
-export const Navigation: FC = () => (
+export const Navigation: FC = ({ children }) => (
   <BrowserRouter>
+    {children}
     <Routes>
       <Route path="/auth" element={<Auth />} />
       <Route path="/*" element={mainElement} />
