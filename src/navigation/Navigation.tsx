@@ -25,6 +25,7 @@ const mainElement = (
 );
 
 export const Navigation: FC = ({ children }) => (
+  // рассказать про basename
   <BrowserRouter>
     {children}
     <Routes>
