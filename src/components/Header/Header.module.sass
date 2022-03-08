@@ -1,0 +1,27 @@
+@import src/styles/common
+
+.root
+  height: 40px
+  background-color: $dark2Color
+  color: white
+  box-shadow: $boxShadow2
+
+.frame
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 100%
+
+.stats
+  display: flex
+  align-items: center
+
+.container
+  background: none
+  outline: none
+  cursor: pointer
+  border: 0
+  padding: 0
+
+  & + &
+    margin-left: 20px
