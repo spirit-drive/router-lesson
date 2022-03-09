@@ -4,13 +4,15 @@ import { Frame } from 'src/components/Frame';
 import { Logo } from 'src/components/Logo';
 import { Button } from 'antd';
 import { useTokenContext } from 'src/TokenProvider';
-import { NavLink } from 'react-router-dom';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 import s from './Header.module.sass';
 
 export type Props = {
   className?: string;
   children?: never;
 };
+
+export const getClassName: NavLinkProps['className'] = ({ isActive }) => cn(s.link, isActive && s.active);
 
 export const Header = memo<Props>(({ className }) => {
   const [, { logout }] = useTokenContext();
@@ -20,13 +22,13 @@ export const Header = memo<Props>(({ className }) => {
       <Frame className={s.frame}>
         <Logo />
         <div>
-          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to=".">
+          <NavLink className={getClassName} to=".">
             home
           </NavLink>
-          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to="other">
+          <NavLink className={getClassName} to="other">
             other
           </NavLink>
-          <NavLink className={({ isActive }) => cn(s.link, isActive && s.active)} to="cats">
+          <NavLink className={getClassName} to="cats">
             cat
           </NavLink>
         </div>

@@ -21,7 +21,11 @@ export const TokenProvider: FC<TokenProviderProps> = ({ children }) => {
   const [token, setToken] = useState<string>(localStorage.getItem('token'));
 
   useEffect(() => {
-    localStorage.setItem('token', token);
+    if (token) {
+      localStorage.setItem('token', token);
+    } else {
+      localStorage.removeItem('token');
+    }
   }, [token]);
 
   const callbacks = useMemo(
