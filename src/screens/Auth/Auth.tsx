@@ -13,7 +13,7 @@ const Auth: FC = () => {
   const onClick = () => {
     const state = location.state as NavigationState;
     login();
-    navigate(state?.from?.pathname || '/');
+    navigate(state?.from || '/');
   };
   return (
     <div className={s.root}>
