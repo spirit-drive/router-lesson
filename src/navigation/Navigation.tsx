@@ -26,6 +26,7 @@ const mainElement = (
 
 export const Navigation: FC = ({ children }) => (
   // рассказать про basename
+  // <BrowserRouter basename="company/1">
   <BrowserRouter>
     {children}
     <Routes>
