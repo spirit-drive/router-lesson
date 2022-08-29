@@ -31,8 +31,7 @@ export const Navigation: FC = ({ children }) => (
     {children}
     <Routes>
       <Route path="/auth" element={<Auth />} />
-      <Route path="/*" element={mainElement} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={mainElement} />
     </Routes>
   </BrowserRouter>
 );
