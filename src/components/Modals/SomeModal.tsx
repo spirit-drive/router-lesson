@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useMemo, useRef } from 'react';
+import React, { FC, useMemo, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Modal } from 'antd';
 
@@ -19,9 +19,7 @@ export type SomeModalType = [SomeModalValue, SomeModalCallbacks];
 export const useSomeModal = (): SomeModalType => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchParamsCopy = useRef(searchParams);
-  useEffect(() => {
-    searchParamsCopy.current = searchParams;
-  }, [searchParams]);
+  searchParamsCopy.current = searchParams;
 
   const value = useMemo(
     () => ({
