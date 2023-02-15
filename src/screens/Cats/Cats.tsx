@@ -4,11 +4,13 @@ import { useParams } from 'react-router-dom';
 import s from './Cats.sass';
 
 const Cats: FC = () => {
-  const { id } = useParams();
+  const { id, batid } = useParams();
 
   return (
     <div className={s.root}>
-      <Frame>Cat {id}</Frame>
+      <Frame>
+        Cat {id} {batid}
+      </Frame>
     </div>
   );
 };

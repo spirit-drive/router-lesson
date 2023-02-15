@@ -17,7 +17,9 @@ const mainElement = (
         <Route path="other" element={<Other />} />
         {/* Зачем replace? */}
         <Route path="cats" element={<Navigate to="/cats/1" replace />} />
-        <Route path="cats/:id" element={<Cats />} />
+        <Route path="cats/:id" element={<Cats />}>
+          <Route path=":batid" element={<Cats />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
