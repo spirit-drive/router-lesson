@@ -18,7 +18,7 @@ const TokenContext = createContext<TokenContextType>(null);
 export const useTokenContext = (): TokenContextType => useContext(TokenContext);
 
 export const TokenProvider: FC<TokenProviderProps> = ({ children }) => {
-  const [token, setToken] = useState<string>(localStorage.getItem('token'));
+  const [token, setToken] = useState<string>(() => localStorage.getItem('token'));
 
   useEffect(() => {
     if (token) {
