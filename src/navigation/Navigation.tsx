@@ -15,10 +15,12 @@ const mainElement = (
       <Routes>
         <Route index element={<Home />} />
         <Route path="other" element={<Other />} />
-        {/* Зачем replace? */}
-        <Route path="cats" element={<Navigate to="/cats/1" replace />} />
-        <Route path="cats/:id" element={<Cats />}>
-          <Route path=":batid" element={<Cats />} />
+        <Route path="cats">
+          {/* Зачем replace? */}
+          <Route index element={<Navigate to="/cats/1" replace />} />
+          <Route path=":id" element={<Cats />}>
+            <Route path=":batid" element={<Cats />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

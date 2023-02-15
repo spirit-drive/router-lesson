@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useRef } from 'react';
+import React, { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Modal } from 'antd';
 
@@ -18,32 +18,24 @@ export type SomeModalType = [SomeModalValue, SomeModalCallbacks];
 
 export const useSomeModal = (): SomeModalType => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const searchParamsCopy = useRef(searchParams);
-  searchParamsCopy.current = searchParams;
 
-  const value = useMemo(
-    () => ({
-      visible: searchParams.has(SOME_MODAL_KEY),
-      content: searchParams.get(SOME_MODAL_KEY),
-    }),
-    [searchParams]
-  );
+  const value = {
+    visible: searchParams.has(SOME_MODAL_KEY),
+    content: searchParams.get(SOME_MODAL_KEY),
+  };
 
-  const callbacks = useMemo(
-    () => ({
-      close: () => {
-        const newSearchParams = new URLSearchParams(searchParamsCopy.current.toString());
-        newSearchParams.delete(SOME_MODAL_KEY);
-        setSearchParams(newSearchParams as URLSearchParams);
-      },
-      open: (_value: string) => {
-        const newSearchParams = new URLSearchParams(searchParamsCopy.current.toString());
-        newSearchParams.append(SOME_MODAL_KEY, _value);
-        setSearchParams(newSearchParams as URLSearchParams);
-      },
-    }),
-    [setSearchParams]
-  );
+  const callbacks = {
+    close: () => {
+      const newSearchParams = new URLSearchParams(searchParams.toString());
+      newSearchParams.delete(SOME_MODAL_KEY);
+      setSearchParams(newSearchParams as URLSearchParams);
+    },
+    open: (_value: string) => {
+      const newSearchParams = new URLSearchParams(searchParams.toString());
+      newSearchParams.append(SOME_MODAL_KEY, _value);
+      setSearchParams(newSearchParams as URLSearchParams);
+    },
+  };
 
   return [value, callbacks];
 };
