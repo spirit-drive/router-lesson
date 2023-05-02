@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { memo } from 'react';
 import cn from 'clsx';
 import { Link } from 'react-router-dom';
@@ -9,10 +10,10 @@ export type LogoProps = {
 };
 
 export const Logo = memo<LogoProps>(({ className }) => (
-  <Link to="/" className={cn(s.root, className)}>
+  <div className={cn(s.root, className)}>
     <div className={s.img} />
     <div className={s.text}>Лого</div>
-  </Link>
+  </div>
 ));
 
 Logo.displayName = 'Logo';

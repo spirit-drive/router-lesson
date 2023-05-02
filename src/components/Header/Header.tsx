@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { memo } from 'react';
 import cn from 'clsx';
 import { Frame } from 'src/components/Frame';
@@ -12,8 +13,6 @@ export type Props = {
   children?: never;
 };
 
-export const getClassName: NavLinkProps['className'] = ({ isActive }) => cn(s.link, isActive && s.active);
-
 export const Header = memo<Props>(({ className }) => {
   const [, { logout }] = useTokenContext();
 
@@ -22,15 +21,9 @@ export const Header = memo<Props>(({ className }) => {
       <Frame className={s.frame}>
         <Logo />
         <div>
-          <NavLink className={getClassName} to=".">
-            home
-          </NavLink>
-          <NavLink className={getClassName} to="other">
-            other
-          </NavLink>
-          <NavLink className={getClassName} to="cats">
-            cat
-          </NavLink>
+          <div>home</div>
+          <div>other</div>
+          <div>cat</div>
         </div>
         <Button onClick={logout} type="primary">
           Выйти

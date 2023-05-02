@@ -5,7 +5,7 @@ import s from './Layout.module.sass';
 
 export type Props = {
   className?: string;
-  children: React.ReactNode | React.ReactChildren;
+  children: React.ReactNode;
 };
 
 export const Layout = memo<Props>(({ className, children }) => (

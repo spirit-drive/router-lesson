@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { FC } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Modal } from 'antd';
@@ -17,23 +18,17 @@ export type SomeModalValue = {
 export type SomeModalType = [SomeModalValue, SomeModalCallbacks];
 
 export const useSomeModal = (): SomeModalType => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const value = {
-    visible: searchParams.has(SOME_MODAL_KEY),
-    content: searchParams.get(SOME_MODAL_KEY),
+    visible: false,
+    content: 'invalid content',
   };
 
   const callbacks = {
     close: () => {
-      const newSearchParams = new URLSearchParams(searchParams.toString());
-      newSearchParams.delete(SOME_MODAL_KEY);
-      setSearchParams(newSearchParams as URLSearchParams);
+      //  закрывать подальное окно
     },
-    open: (_value: string) => {
-      const newSearchParams = new URLSearchParams(searchParams.toString());
-      newSearchParams.append(SOME_MODAL_KEY, _value);
-      setSearchParams(newSearchParams as URLSearchParams);
+    open: (content: string) => {
+      // открывает модальное окно и записывает в него контент
     },
   };
 

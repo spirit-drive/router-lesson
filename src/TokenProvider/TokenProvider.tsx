@@ -17,6 +17,9 @@ const TokenContext = createContext<TokenContextType>(null);
 
 export const useTokenContext = (): TokenContextType => useContext(TokenContext);
 
+/**
+ * Это симуляция работы с токеном, токен не настоящий
+ * */
 export const TokenProvider: FC<TokenProviderProps> = ({ children }) => {
   const [token, setToken] = useState<string>(() => localStorage.getItem('token'));
 
