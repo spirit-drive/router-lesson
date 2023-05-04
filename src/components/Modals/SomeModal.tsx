@@ -26,14 +26,12 @@ export const useSomeModal = (): SomeModalType => {
 
   const callbacks = {
     close: () => {
-      const newSearchParams = new URLSearchParams(searchParams.toString());
-      newSearchParams.delete(SOME_MODAL_KEY);
-      setSearchParams(newSearchParams as URLSearchParams);
+      searchParams.delete(SOME_MODAL_KEY);
+      setSearchParams(searchParams);
     },
-    open: (_value: string) => {
-      const newSearchParams = new URLSearchParams(searchParams.toString());
-      newSearchParams.append(SOME_MODAL_KEY, _value);
-      setSearchParams(newSearchParams as URLSearchParams);
+    open: (content: string) => {
+      searchParams.append(SOME_MODAL_KEY, content);
+      setSearchParams(searchParams);
     },
   };
 
