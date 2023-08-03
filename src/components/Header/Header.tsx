@@ -22,13 +22,13 @@ export const Header = memo<Props>(({ className }) => {
       <Frame className={s.frame}>
         <Logo />
         <div>
-          <NavLink className={getClassName} to=".">
+          <NavLink className={getClassName} to="/">
             home
           </NavLink>
-          <NavLink className={getClassName} to="other">
+          <NavLink className={getClassName} to="/other">
             other
           </NavLink>
-          <NavLink className={getClassName} to="cats">
+          <NavLink className={getClassName} to="/cats">
             cat
           </NavLink>
         </div>
