@@ -1,5 +1,7 @@
-import React, { FC } from 'react';
-import { useSearchParams } from 'react-router-dom';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { FC, useEffect } from 'react';
+import { useSearchParams, useLocation } from 'react-router-dom';
+import qs from 'query-string';
 import { Modal } from 'antd';
 
 const SOME_MODAL_KEY = 'someModalId';
@@ -17,7 +19,15 @@ export type SomeModalValue = {
 export type SomeModalType = [SomeModalValue, SomeModalCallbacks];
 
 export const useSomeModal = (): SomeModalType => {
+  const location = useLocation();
+
+  // useEffect(() => {
+  //   console.log(location.search, qs.parse(location.search));
+  // }, [location.search]);
+
   const [searchParams, setSearchParams] = useSearchParams();
+
+  // console.log(searchParams);
 
   const value = {
     visible: searchParams.has(SOME_MODAL_KEY),
