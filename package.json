@@ -11,15 +11,15 @@
     "build": "webpack -c webpack.config.prod.js"
   },
   "dependencies": {
-    "@ant-design/compatible": "^1.1.0",
-    "@ant-design/icons": "^4.7.0",
-    "antd": "^4.19.1",
+    "@ant-design/compatible": "^5.1.1",
+    "@ant-design/icons": "^5.2.4",
+    "antd": "^5.8.1",
     "clsx": "^1.1.1",
     "fast-deep-equal": "^3.1.3",
     "query-string": "^7.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -58,7 +58,6 @@
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.1.0",
-    "node-sass": "^6.0.1",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "prettier": "^2.3.2",
