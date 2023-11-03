@@ -4,7 +4,7 @@ import s from './Frame.module.sass';
 
 export type Props = {
   className?: string;
-  children: React.ReactNode | React.ReactChildren;
+  children: React.ReactNode;
 };
 
 export const Frame = memo<Props>(({ className, children }) => <div className={cn(s.root, className)}>{children}</div>);

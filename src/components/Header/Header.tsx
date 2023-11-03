@@ -5,7 +5,6 @@ import { Frame } from 'src/components/Frame';
 import { Logo } from 'src/components/Logo';
 import { Button } from 'antd';
 import { useTokenContext } from 'src/TokenProvider';
-import { NavLink, NavLinkProps } from 'react-router-dom';
 import s from './Header.module.sass';
 
 export type Props = {

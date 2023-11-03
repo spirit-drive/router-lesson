@@ -1,9 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'antd/dist/antd.less';
-import '@ant-design/compatible/assets/index.css';
+import * as React from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { createRoot } from 'react-dom/client';
 import './styles/index.sass';
-
 import { App } from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root') as HTMLElement;
+const root = createRoot(container);
+root.render(<App />);

@@ -28,7 +28,7 @@ module.exports = {
   devServer: {
     port,
     hot: true,
-    overlay: true,
+    historyApiFallback: true,
     host,
   },
   optimization: {

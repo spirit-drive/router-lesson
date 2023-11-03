@@ -1,7 +1,7 @@
 import React, { createContext, FC, useContext, useEffect, useMemo, useState } from 'react';
 
 export type TokenProviderProps = {
-  children: React.ReactChildren | React.ReactChild;
+  children: React.ReactNode;
 };
 
 export type Token = string;

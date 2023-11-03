@@ -39,7 +39,7 @@ export const SomeModal: FC = () => {
   const [{ visible, content }, { close }] = useSomeModal();
 
   return (
-    <Modal visible={visible} onCancel={close}>
+    <Modal open={visible} onCancel={close}>
       {content}
     </Modal>
   );
