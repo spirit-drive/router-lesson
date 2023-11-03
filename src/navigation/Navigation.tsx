@@ -29,7 +29,13 @@ const mainElement = (
   </ProtectedRoute>
 );
 
-export const Navigation: FC = ({ children }) => (
+
+export type NavigationProps = {
+  children: React.ReactNode;
+}
+
+
+export const Navigation: FC<NavigationProps> = ({ children }) => (
   // рассказать про basename
   // <BrowserRouter basename="company/1">
   <BrowserRouter>

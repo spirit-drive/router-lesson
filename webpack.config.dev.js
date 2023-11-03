@@ -29,7 +29,6 @@ module.exports = {
     port,
     hot: true,
     historyApiFallback: true,
-    overlay: true,
     host,
   },
   optimization: {
