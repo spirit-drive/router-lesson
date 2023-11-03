@@ -10,4 +10,8 @@ import Cats from 'src/screens/Cats';
 import Auth from 'src/screens/Auth';
 import NotFound from 'src/screens/NotFound';
 
-export const Navigation: FC = () => null;
+export type NavigationProps = {
+  children: React.ReactNode;
+}
+
+export const Navigation: FC<NavigationProps> = () => null;
