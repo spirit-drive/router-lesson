@@ -36,13 +36,13 @@ export type NavigationProps = {
 
 
 export const Navigation: FC<NavigationProps> = ({ children }) => (
-  // рассказать про basename
-  // <BrowserRouter basename="company/1">
-  <BrowserRouter>
-    {children}
-    <Routes>
-      <Route path="/auth" element={<Auth />} />
-      <Route path="*" element={mainElement} />
-    </Routes>
-  </BrowserRouter>
+    // рассказать про basename
+    // <BrowserRouter basename="company/1">
+    <BrowserRouter>
+        {children}
+        <Routes>
+            <Route path="/auth" element={<Auth />} />
+            <Route path="*" element={mainElement} />
+        </Routes>
+    </BrowserRouter>
 );

@@ -27,6 +27,7 @@ export const useSomeModal = (): SomeModalType => {
 
   const [searchParams, setSearchParams] = useSearchParams();
 
+
   // console.log(searchParams);
 
   const value = {
@@ -52,7 +53,7 @@ export const SomeModal: FC = () => {
   const [{ visible, content }, { close }] = useSomeModal();
 
   return (
-    <Modal visible={visible} onCancel={close}>
+    <Modal open={visible} onCancel={close}>
       {content}
     </Modal>
   );
